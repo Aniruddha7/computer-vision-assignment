@@ -1,0 +1,20 @@
+Video Tagging using Machine Learning for classification and recommendation systems
+
+Feasibility: It is possible to create a model that can take the input frame of the video, classifiy and tag 
+it based on relevant classes.
+
+Methodology: Videos are continuous stream of image frames. So, we first download the video dataset and split it 
+into train and test sets. The labels have to be in such a way that they contain both tag and names of the videos.
+We create dataframe for the video names. Tags are separated from names and appled to train and test video dataset 
+respectively and frames are extracted from videos that are necessary for training and put into a separate folder. 
+Both names of frames and their tags are saved in a csv file.
+
+Before training, we go through the extracted frames, create validation set to check the model's performance
+on unseen frame data. Then the model architecture is defined, trained and weights are saved.
+
+In the evaluation step, we will load the saved weights obtained from training and create test set similar to the
+above steps, make predictions on test data and evaluate the model for test accuracy.
+
+Challenges: The accuracy achieved on UCF101 video dataset is 43.9% and though it has 13,320 video files which 
+consumes heavy computation, it is not enough to get more accuracy. We need videos of longer duration so that 
+more frames can be extracted.
